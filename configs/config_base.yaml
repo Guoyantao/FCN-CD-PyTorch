@@ -1,0 +1,55 @@
+# Basic configurations
+
+
+# Data
+dataset: AC_Szada
+num_workers: 0
+repeats: 3200
+subset: val
+crop_size: 112
+
+
+# Optimizer
+optimizer: SGD
+lr: 0.001
+weight_decay: 0.0005
+load_optim: False
+save_optim: False
+lr_mode: const
+step: 2
+
+
+# Training related
+batch_size: 32
+num_epochs: 10
+resume: ''
+anew: False
+device: cuda
+
+
+# Experiment
+exp_dir: ../exp/
+# tag: ''
+# suffix: ''
+# DO NOT specify exp_config
+debug_on: False
+inherit_off: True
+log_off: False
+track_intvl: 1
+tb_on: False
+tb_intvl: 100
+suffix_off: False
+save_on: False
+out_dir: ''
+val_iters: 16
+
+
+# Criterion
+criterion: NLL
+weights: 
+  - 1.0   # Weight of no-change class
+  - 10.0   # Weight of change class
+
+
+# Model
+model: Unet
